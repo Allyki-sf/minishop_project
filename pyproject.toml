@@ -18,6 +18,10 @@ fastapi = "^0.115.12"
 uvicorn = "^0.34.2"
 pytest = "^8.3.5"
 pydantic = {extras = ["email"], version = "^2.11.4"}
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
