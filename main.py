@@ -8,6 +8,7 @@ app = FastAPI()
 app.include_router(items_router)
 app.include_router(users_router)
 
+
 @app.get("/")
 def hello_index():
     return {
@@ -17,19 +18,18 @@ def hello_index():
 
 @app.get("/hello/")
 def hello(name: str = "Denis"):
-     name = name.strip().title()
-     return {"message": f"Hello {name}"}
+    name = name.strip().title()
+    return {"message": f"Hello {name}"}
 
 
 @app.get("/calc/add/")
-def add(a:int,b:int):
-     return {
-          "a": a,
-          "b": b,
-          "result": a + b,
-     }
- 
- 
+def add(a: int, b: int):
+    return {
+        "a": a,
+        "b": b,
+        "result": a + b,
+    }
+
 
 if __name__ == "__main__":
     uvicorn.run("main:app", reload=True)
